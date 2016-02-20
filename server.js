@@ -19,6 +19,9 @@ route.init();
 // server is going up, hold tight!
 var server = http.createServer(app);
 
+app.use('/', express.static(__dirname + '/app'));
+
+
 // No longer using appfog
 // Decides which port to use
 // AppFog port env. variable: process.env.VCAP_APP_PORT
