@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route, $timeout, chatService) {
+angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route, $timeout, chatService, $http) {
 
     // TODO:
     // Create a class: request
@@ -93,15 +93,33 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         form.$error.required = [{}];
         form.$error.email = false;
     }
+    $('#form').ajaxChimp({
+        url: 'http://neucheddar.us12.list-manage.com/subscribe/post?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460',
+        callback: function(res) {
+            if (resp.result === 'success') {
+                $scope.submitGood = false;
+                $scope.loading = false;
+            }
+            else {
+                $scope.loading = false;
+                $scope.errorServer = true;
+            }
+        }
+    });
 
     $scope.signupEmail = function(form) {
         $scope.emailError = false;
-        if (form.$valid) {            
-            alert("Valid email " + $scope.emailInput );
+        $scope.errorServer = false;
+        $scope.submitGood = false;
+
+        if (form.$valid) {       
+            $scope.loading = true; 
+            $('#form').submit();
         }
         else {
             $scope.emailError = true;
         }
+
 
     }
 

@@ -63,16 +63,25 @@
             </div>
             <div class="btn-top">Your northeastern university email</div>
             <div style="display:flex">
-                <div class="hero-btn stop">
-                    <form style="margin:0px;display:flex;" name="uniForm">
-                        <input required ng-show="uni" ng-enter="signupEmail(uniForm)" ng-model="emailInput" type="email" class="uni-input" placeholder="YourEmail@husky.neu.edu" >
+                <div ng-show="loading" class="loader"></div>
+
+                <div ng-hide="loading" class="hero-btn stop">
+                    <form  target="_blank" style="margin:0px;display:flex;" name="uniForm" id="form">
+                        <input id="mce-EMAIL" required ng-show="uni" ng-enter="signupEmail(uniForm)" ng-model="emailInput" name="EMAIL" type="email" class="uni-input" placeholder="YourEmail@husky.neu.edu" >
                         </input>
+
                         <img ng-click="signupEmail(uniForm)" class="sub-arrow" src="../images/arrow.svg">
                     </form>
                 </div> 
                 <img ng-show="!(uniForm.$error.required && !uniForm.$error.email) && !emailInput" ng-click="clearBox(uniForm)" class="sub-close" src="../images/close.svg">
             </div>
-            <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="emailError">Not a valid email!</div>
+
+            <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="submitGood && !loading">Please check your email to confirm.</div>
+
+            <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="errorServer && !loading">There was an error with your request, please try again.</div>
+
+            <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="emailError && !loading">Not a valid email!</div>
+
             <div ng-show="!chat.status.started && chat.status.error" id="connection-error">
                 <strong>Error:</strong> {{chat.status.error}}<br/>
                 Please try again later
