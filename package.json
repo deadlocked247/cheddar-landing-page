@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "node server.js",
-        "postinstall": "echo postinstall time; node_modules/grunt-cli/bin/grunt serve"
+        "postinstall": "angular-app/node_modules/grunt-cli/bin/grunt serve"
 
     },
     "engines": {
