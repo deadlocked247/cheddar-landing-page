@@ -26,9 +26,8 @@ var server = http.createServer(app);
 
 // Use OpenShift default port
 var port    = process.env.OPENSHIFT_NODEJS_PORT || app.get('port');
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
-server.listen(port, ipaddress, function(){
+server.listen(port, function(){
 
     console.log('Express server listening on port ' + port);
 
