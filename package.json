@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "node server.js",
-        "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt serve"
+        "postinstall": "echo postinstall time; node_modules/grunt-cli/bin/grunt serve"
 
     },
     "engines": {
@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "express": "3.4.8",
-        "sockjs": "0.3.8"
+        "sockjs": "0.3.8",
+        "grunt-cli": ""
     }
 }
