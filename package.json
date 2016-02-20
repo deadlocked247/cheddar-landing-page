@@ -5,7 +5,7 @@
 
     "scripts": {
         "start": "node server.js",
-        "postinstall": "echo postinstall time; node_modules/grunt-cli/bin/grunt serve"
+        "postinstall": "node_modules/grunt-cli/bin/grunt serve"
     },
     "engines": {
       "node": "0.10.x"
@@ -14,6 +14,7 @@
         "express": "3.4.8",
         "sockjs": "0.3.8",    
         "grunt": "~0.4.1",
+        "grunt-cli": "",
         "grunt-autoprefixer": "~0.4.0",
         "grunt-bower-install": "~0.7.0",
         "grunt-concurrent": "~0.4.1",
