@@ -1,0 +1,131 @@
+<div class="cont">
+    <div class="left">
+        <div class="filler"></div>
+        <div class="iphone">
+            <div class="chat">
+                <div id="chat-history" ng-init="splt = msg.split(':').splice(1)" ng-repeat="msg in chat.data.history track by $index" class="from">
+                    <div ng-if="msg.search(':') == -1" class="msg-joined">{{msg}}</div>
+                    
+                    <div ng-if="msg.search(':') > 0 && msg.split(':')[0] == chat.data.username" class="msg-to-container">
+                        
+                        <div class="msg-to">
+                            {{splt.join("")}}
+                        </div>
+                        <div ng-init="letters = msg.split(':')[0].split(' '); count = msg.split(':')[0].split('').length" class="msg-me">
+                            {{letters[0][0]}}{{letters[1][0]}} 
+                        </div>
+                    </div> 
+                    
+                     <div ng-if="msg.search(':') > 0 && msg.split(':')[0] != chat.data.username" class="msg-from-container">
+                        <div ng-init="letters = msg.split(':')[0].split(' '); count = msg.split(':')[0].split('').length" class="msg-them" ng-class="{'red': count < 8, 'yellow': count >= 8 && count < 18, 'orange': count>= 18}">
+                            {{letters[0][0]}}{{letters[1][0]}} 
+                        </div>
+                        <div class="msg-from">
+                            {{splt.join("")}}
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="send-msg">
+                <input ng-enter="sendButtonClicked()" class="message" ng-model="chat.data.messageText" name="messageText" type="text" placeholder="Say cheese...">
+                <img ng-click="sendButtonClicked()" src="../images/send.svg" ng-class="{'active': chat.data.messageText && chat.data.messageText.length > 0}" class="send-btn">
+            </div>
+        </div>
+        <div class="filler"></div>
+    </div>
+    <div class="right">
+        <div class="filler"></div>
+            <div class="hero-name">
+                cheddar
+            </div>
+            <div class="hero-title">
+                Anonymous messaging for your dorm
+            </div>
+            <div class="hero-sub">
+                Make new friends. Find a date. Troll. 
+            </div>
+            <div style="display:flex">
+                <div ng-init="showBtn = false" ng-click="showBtn = true" class="hero-btn" ng-class="{'stop':showBtn}">
+                    <p style="margin:0px" ng-show="!showBtn">Find your university</p>
+                    <ul ng-show="showBtn && !uni">
+                        <li ng-click="uni = 'Northeastern University'; email='husky.neu.edu'">
+                            Northeastern University
+                        </li>
+                        <li ng-click="uni = 'Boston University'; email='bu.edu'">
+                            Boston University
+                        </li>
+                        <li ng-click="uni = 'Boston College'; email='bc.edu'">
+                            Boston College
+                        </li>
+                        <li ng-click="uni = 'Other'; email='whatever.com'">
+                            Other
+                        </li>
+                    </ul>
+                    <form style="margin:0px;display:flex;" name="uniForm" ng-show="uni">
+                        <input required ng-show="uni" ng-enter="signupEmail(uniForm)" ng-model="emailInput" type="email" class="uni-input" placeholder="YourEmail@{{email}}" >
+                        </input>
+                        <img ng-click="signupEmail(uniForm)" class="sub-arrow" src="../images/arrow.svg">
+                    </form>
+                </div> 
+                <img ng-show="uni" ng-click="uni = undefined; email = undefined; showBtn = false;" class="sub-close" src="../images/close.svg">
+            </div>
+            <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="emailError">Not valid {{uni}} email!</div>
+            <div ng-show="!chat.status.started && chat.status.error" id="connection-error">
+                <strong>Error:</strong> {{chat.status.error}}<br/>
+                Please try again later
+            </div>
+            <div style="flex:.75" class="filler"></div>
+            <div class="bottom">
+                <a href="">Contact</a>
+                <a href="">Policy</a>
+                <a href="">Can't find your school?</a>
+            </div>
+    </div>
+</div>
+<!-- login pane -->
+<div style="display:none;" ng-hide="chat.status.started">
+    <form name="loginForm" ng-init="init()">
+        <div class="row login-pane">
+            <div class="span6 input-field">
+                <input ng-model="username" name="username"  type="text" placeholder="Your nick-name..">
+            </div>
+            <div class="span3">
+                <input type="submit" class="btn btn-primary" ng-disabled="chat.status.starting" value="Start Chatting!" />
+            </div>
+        </div>
+    </form>
+</div>
+<!-- error message -->
+
+
+<!-- chat room -->
+<div ng-show="chat.status.started">
+    <div class="span7">
+        <div class="row">
+            <div class="span7">
+                <textarea ng-model="chat.data.history"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="span2" id="online-user-list">
+        <div>
+            <span class="label label-info">Online Users ({{chat.data.users.length}})</span>
+        </div>
+        <span ng-repeat="user in chat.data.users">{{user.name}} <br/></span>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div style="display:none" class="chat-bottom">
+        <form name="sendForm" ng-submit="sendButtonClicked()">
+            <div class="span6">
+                <input class="message" ng-model="chat.data.messageText" name="messageText" type="text" placeholder="Type your message here..">
+            </div>
+            <div class="span3 buttons">
+                <input type="submit" class="btn btn-primary send-button" data-ng-disabled="chat.data.messageText == ''"/>
+            </div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+</div>

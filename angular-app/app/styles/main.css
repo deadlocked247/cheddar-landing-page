@@ -1,0 +1,539 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    transition-duration: .1s;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.cont {
+    display: flex;
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:100%;
+}
+.from {
+        padding: 5px 0px;
+}
+
+.hero-title {
+    font-size: 3em;
+    color: white;
+    text-align: left;
+    padding:0px 40px;
+    flex: none;
+    font-family: 'Effra-Light', sans-serif;
+}
+
+.hero-sub {
+    font-size: 2em;
+    color: white;
+    text-align: left;
+    padding:30px 40px;
+    padding-bottom:50px;
+    flex: none;
+    font-family: 'Effra-Regular', sans-serif;
+}
+
+.bottom {
+    margin:60px;
+    color:white;
+    font-family: 'Effra-Regular', sans-serif;
+}
+
+.hero-btn {
+    font-family: 'Effra-Medium', sans-serif;
+    font-size: 14px;
+    letter-spacing: .5px;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 2px solid white;
+}
+
+.hero-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color:#f26667;
+}
+
+.hero-btn.stop:hover {
+    font-family: 'Effra-Medium', sans-serif;
+    font-size: 14px;
+    letter-spacing: .5px;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background: #f26667;
+    cursor: inherit;
+    border: 2px solid white;
+}
+
+.uni-input, .uni-input:active {
+    border: 0px !important;
+    box-shadow: none !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    outline:none !important;
+    width:300px !important;
+    font-family: 'Effra-Medium', sans-serif;
+    background: #F26667 !important;
+    background-color: #F26667 !important;
+    display: block !important;
+    height: auto !important;
+    margin-bottom: 0px !important;
+    vertical-align: middle;
+
+}
+
+.sub-arrow {
+    height:20px;
+    padding-top:5px;
+}
+
+.hero-name {
+    font-family: 'Effra-Regular', sans-serif;
+    color:white;
+    font-size:5em;
+    letter-spacing: -3px;
+    padding:50px;
+}
+
+.sub-arrow:hover {
+    cursor: pointer;
+}
+
+.sub-arrow:active {
+    position: relative;
+    bottom: -2px;
+}
+
+.sub-close {
+    height:20px;
+    padding:17px;
+    color: rgba(255,255,255,0.5);
+}
+
+.sub-close:hover {
+    color:white;
+    cursor: pointer;
+}
+
+.sub-close:active {
+    position: relative;
+    bottom:-2px;
+}
+/* SUCK MY BIG HAIRY BALLS BOOTSTRAP YOU FUCKING SUCK DICK WHY*/
+
+.uni-input[type="email"]::-webkit-input-placeholder {
+    border: 0px !important;
+    box-shadow: none !important;
+    color: rgba(255,255,255,0.5) !important;
+    padding: 0px !important;
+    outline:none !important;
+    width:300px !important;
+    font-family: 'Effra-Medium', sans-serif;
+    background: #F26667 !important;
+    background-color: #F26667 !important;
+    display: block !important;
+    height: auto !important;
+    margin-bottom: 0px !important;
+    vertical-align: middle;
+}
+ 
+.uni-input[type="email"]:-moz-placeholder { /* Firefox 18- */
+    border: 0px !important;
+    box-shadow: none !important;
+    color: rgba(255,255,255,0.5) !important;
+    padding: 0px !important;
+    outline:none !important;
+    width:300px !important;
+    font-family: 'Effra-Medium', sans-serif;
+    background: #F26667 !important;
+    background-color: #F26667 !important;
+    display: block !important;
+    height: auto !important;
+    margin-bottom: 0px !important;
+    vertical-align: middle;
+}
+ 
+.uni-input[type="email"]::-moz-placeholder {  /* Firefox 19+ */
+    border: 0px !important;
+    box-shadow: none !important;
+    color: rgba(255,255,255,0.5) !important;
+    padding: 0px !important;
+    outline:none !important;
+    width:300px !important;
+    font-family: 'Effra-Medium', sans-serif;
+    background: #F26667 !important;
+    background-color: #F26667 !important;
+    display: block !important;
+    height: auto !important;
+    margin-bottom: 0px !important;
+    vertical-align: middle;
+}
+ 
+.uni-input[type="email"]:-ms-input-placeholder {  
+    border: 0px !important;
+    box-shadow: none !important;
+    color: rgba(255,255,255,0.5) !important;
+    padding: 0px !important;
+    outline:none !important;
+    width:300px !important;
+    font-family: 'Effra-Medium', sans-serif;
+    background: #F26667 !important;
+    background-color: #F26667 !important;
+    display: block !important;
+    height: auto !important;
+    margin-bottom: 0px !important;
+    vertical-align: middle;
+}
+
+.hero-btn>ul {
+    margin:0px;
+    padding:0px;
+    list-style: none;
+}
+
+.hero-btn>ul:hover {
+    color: rgba(255,255,255,0.5); 
+}
+
+.hero-btn>ul>li:hover {
+    color:white;
+    cursor: pointer;
+}
+
+.hero-btn>ul>li {
+    padding:10px;
+}
+
+.bottom>a, a:visited, a:hover {
+    color:white;
+    padding:0px 20px;
+}
+
+
+.hero-title>p {
+    margin: 0px;
+    font-family: 'Effra-Medium', sans-serif;
+}
+
+.message:focus:active, .message:active:focus, .message:focus, .message:active {
+    border-color: #E8E8E8 !important;
+    box-shadow: 0 0px 0px #E8E8E8 !important;
+}
+.msg-them {
+    font-family: 'Effra-Medium', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    background: #bbbbbb;
+    color: white;
+    border-radius: 50%;
+    /* height: 30px; */
+    width: 30px;
+    text-align: center;
+    vertical-align: top;
+    padding: 5px 0px;
+    margin-right: 5px;
+}
+
+.msg-to-container {
+    text-align: right;
+}
+.msg-me {
+    font-family: 'Effra-Medium', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    background: #f26667;
+    color: white;
+    border-radius: 50%;
+    /* height: 30px; */
+    width: 30px;
+    text-align: center;
+    vertical-align: top;
+    padding: 5px 0px;
+    margin-left: 5px;
+}
+
+.msg-them.red {
+    background: #f28e66;
+}
+
+.msg-them.yellow {
+    background: #ffd03e;
+}
+
+.msg-them.orange {
+    background: #f2a166;
+}
+
+
+.msg-from {
+    font-family: 'Effra-Regular', sans-serif;
+    background: #f1f1f1;
+    color: #565656;
+    word-wrap: break-word;
+    padding: 5px 10px;
+    border-radius: 15px;
+        display: inline-block;
+    max-width: 100px;
+}
+
+.msg-to {
+    font-family: 'Effra-Regular', sans-serif;
+    background: #f26667;
+    color: white;
+    word-wrap: break-word;
+    padding: 5px 10px;
+    border-radius: 15px;
+        display: inline-block;
+        text-align: left;
+    max-width: 100px;
+}
+
+.msg-joined {
+    font-family: 'Effra-Medium', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color:#aaaaaa;
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+.send-btn {
+height: 20px;
+opacity: .5;
+    margin: 6px;
+    position: relative;
+    top: -5px;
+}
+
+.send-btn.active {
+    opacity: 1;
+}
+
+.send-btn.active:hover {
+    cursor: pointer;
+}
+
+.message {
+    width: 145px;
+}
+
+.send-msg {
+    padding-top: 10px;
+    width: 210.5px;
+    border-top: 1px #E8E8E8 solid;
+    background: #F8F8F8;
+    display: inline-block;
+    margin-left: -2.5px;
+}
+
+.chat {
+    height: 282px;
+    width: 195px;
+    display: block;
+    text-align: left;
+    margin: 126.5px auto;
+    overflow-y: scroll;
+    margin-bottom: 0px;
+}
+
+.iphone {
+width: calc(100% - 40px);
+    margin: 20px;
+    height: 550px;
+    text-align: center;
+    background-size: contain;
+    background-image: url('../images/iphone.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.filler {
+    flex: 1;
+}
+
+.left {
+    flex:1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background: #FFD647;
+    z-index: -2;
+    flex-direction: column;
+    
+}
+
+.left::before {
+    background-image: url('../images/cheese-pattern.svg');
+    background-size: 140px;
+    -webkit-transform:rotate(45deg);
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+
+}
+
+.right {
+    background: #f26667;
+    flex:2;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    margin-top: 30px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+
+/* CUSTOM CSS */
+
+#connection-error {
+    width: 40%;
+    margin: 10px auto 40px;
+    padding: 15px;
+    text-align: center;
+    background-color: #FFD0D0;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    background-color: #FFD647;
+    border-radius: 11px;
+    color: #F26667;
+}
+
+#online-user-list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 350px;
+    text-align: center;
+}
+
+.login-pane {
+    margin: 50px 0;
+}
+
+.login-pane .input-field {
+    text-align: right;
+}
+
+.login-pane .input-field input{
+    width: 80%;
+}
+
+.chat-bottom {
+
+}
+
+.chat-bottom .message {
+    width: 100%;
+}
+
+.chat-bottom .buttons {
+    text-align: right;
+}
+
+.chat-bottom .buttons .send-button {
+    width: 65%;
+}
+
+.chat-bottom .buttons .quit-button {
+    width: 30%;
+}
