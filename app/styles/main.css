@@ -16,7 +16,6 @@ body {
 .cont {
     display: flex;
     min-height: 100%;
-    min-width: 1024px;
 
     /* Set up proportionate scaling */
     width: 100%;
@@ -33,10 +32,9 @@ body {
 }
 
 .hero-title {
-    font-size: 3em;
+    font-size: 2.5em;
     color: white;
     text-align: left;
-    padding:0px 40px;
     flex: none;
     font-family: 'Effra-Light', sans-serif;
 }
@@ -371,6 +369,8 @@ width: calc(100% - 40px);
     background-position: center center;
 }
 
+
+
 .filler {
     flex: 1;
 }
@@ -407,6 +407,65 @@ width: calc(100% - 40px);
     flex-direction:column;
     align-items:center;
 }
+
+
+@media(max-width: 960px) {
+    .cont {
+        flex-direction:column;
+    }
+    .left:before {
+        width: 500%;
+        height: 400%;
+        top: 100%;
+        left: -100%;
+    }
+    .left {
+        flex:none;
+        height:500px;
+    }
+    .iphone {
+        background-size: 400px;
+        margin:0px 20px;
+        background-position: center top;
+        background-image: url('../images/iphone-static.png');
+    }
+    .chat {
+        display: none;
+    }
+    .send-msg {
+        display: none;
+    }
+    .hero-title {
+        font-size: 2.5em;
+        color: white;
+        text-align: left;
+        flex: none;
+        font-family: 'Effra-Light', sans-serif;
+        line-height: initial;
+            padding: 0px 20px;
+        text-align: center;
+    }
+    .hero-name {
+        font-family: 'Effra-Regular', sans-serif;
+        color: white;
+        font-size: 5em;
+        letter-spacing: -3px;
+        padding: 40px;
+        padding-top: 80px;
+    }
+    .hero-sub {
+        font-size: 2em;
+        color: white;
+        text-align: left;
+        padding: 15px 25px;
+        padding-bottom: 50px;
+        flex: none;
+        font-family: 'Effra-Regular', sans-serif;
+        line-height: initial;
+        text-align: center;
+    }
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
