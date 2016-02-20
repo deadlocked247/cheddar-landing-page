@@ -5,7 +5,7 @@
 
     "scripts": {
         "start": "node server.js",
-        "postinstall": "node_modules/grunt-cli/bin/grunt serve"
+        "postinstall": "bower install; node_modules/grunt-cli/bin/grunt serve"
     },
     "engines": {
       "node": "0.10.x"
