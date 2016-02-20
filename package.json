@@ -3,7 +3,9 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt serve"
+
     },
     "engines": {
       "node": "0.10.x"
