@@ -27,7 +27,7 @@
                     </div> 
                 </div>
                 <div ng-click="showGuide = false" ng-if="showGuide" class="guide">
-                    Chat with people!
+                    Live chat here!
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg  style="height: 10px;
@@ -52,20 +52,33 @@
     </div>
     <div class="right">
         <div class="filler"></div>
-            <div class="hero-name">
+            <div class="hero-name animated fadeInDown">
                 cheddar
             </div>
             <div class="hero-title">
                 Anonymous messaging for your dorm
             </div>
             <div class="hero-sub">
-                Make new friends. Find a date. Troll. 
+
+                <p class="show1" style="margin:0px;padding-right:8px;" >Make new friends. </p><p class="show2" style="margin:0px;padding-right:8px"> Find a date. </p><p class="show3" style="margin:0px;">Troll. </p>
             </div>
-            <div class="btn-top">Your northeastern university email</div>
-            <div style="display:flex">
+            <div ng-hide="loading || submitGood" class="btn-top">Your northeastern university email</div>
+            <?xml version="1.0" encoding="utf-8"?>
+            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <svg ng-if="submitGood" style="height: 50px;padding: 20px;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#FFFFFF;}
+            </style>
+            <path id="XMLID_6_" class="st0" d="M176.6,48.1c-6.2-6.2-16.1-6.2-22.3,0l-76.1,76.1L48.5,94.5c-6.2-6.2-16.1-6.2-22.3,0
+                c-6.2,6.2-6.2,16.1,0,22.3L67,157.7c2.3,2.3,5.2,3.8,8.1,4.3c1,0.2,2,0.3,3,0.3c4,0,8.1-1.5,11.2-4.6l87.3-87.3
+                C182.8,64.3,182.8,54.3,176.6,48.1z"/>
+            </svg>
+
+            <div style="display:flex" class="animated fadeIn">
                 <div ng-show="loading" class="loader"></div>
 
-                <div ng-hide="loading" class="hero-btn stop">
+                <div ng-hide="loading || submitGood" class="hero-btn stop">
                     <form style="margin:0px;display:flex;" name="uniForm" id="form">
                         <input id="mce-EMAIL" required ng-show="uni" ng-enter="signupEmail(uniForm)" ng-model="emailInput" name="EMAIL" type="email" class="uni-input" placeholder="YourEmail@husky.neu.edu" >
                         </input>
@@ -76,7 +89,8 @@
                 <img ng-show="!(uniForm.$error.required && !uniForm.$error.email) && !emailInput" ng-click="clearBox(uniForm)" class="sub-close" src="../images/close.svg">
             </div>
 
-            <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="submitGood && !loading">Please check your email to confirm.</div>
+            <div style="font-size:18px;text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="submitGood && !loading">
+                <span style="font-size:2em;padding-bottom:20px;">All set!</span><br></br>Please check your email to confirm.</div>
 
             <div style="text-align:center;padding:10px;color:white;font-family:'Effra-Medium';" class="error" ng-show="errorServer && !loading">There was an error with your request, please try again.</div>
 

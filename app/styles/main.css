@@ -37,6 +37,14 @@ body {
     font-family: 'Effra-Light', sans-serif;
 }
 
+.show1, .show2, .show3 {
+    display: none !important;
+}
+
+.active {
+    display: inline-block !important;
+}
+
 .hero-sub {
     font-size: 2em;
     color: white;
@@ -44,6 +52,7 @@ body {
     padding:30px 40px;
     padding-bottom:50px;
     flex: none;
+    height: 30px;
     font-family: 'Effra-Regular', sans-serif;
 }
 

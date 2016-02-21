@@ -94,6 +94,49 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         form.$error.email = false;
     }
 
+    $timeout(function() {
+        $('.show1').addClass('active animated fadeIn');
+    }, 200)
+
+    $timeout(function() {
+        $('.show1').removeClass('fadeIn').addClass('fadeOut')
+        $timeout(function() {
+            $('.show1').removeClass('active');
+        }, 500)
+        
+    }, 1400)
+
+    $timeout(function() { 
+        $('.show2').addClass('active animated fadeIn');
+    }, 2000)
+
+    $timeout(function() {
+        $('.show2').removeClass('fadeIn').addClass('fadeOut')
+        $timeout(function() {
+            $('.show2').removeClass('active');
+        }, 500)
+    }, 3200)
+
+
+    $timeout(function() {
+        $('.show3').addClass('active animated fadeIn');
+    }, 3800)
+
+    $timeout(function() {
+        $('.show3').removeClass('fadeIn').addClass('fadeOut')
+        $timeout(function() {
+            $('.show3').removeClass('active');
+        }, 500)
+    }, 5000)
+
+    $timeout(function() {
+        $('.show1').removeClass('fadeOut').addClass('active animated fadeIn');
+        $('.show2').removeClass('fadeOut').addClass('active animated fadeIn');
+        $('.show3').removeClass('fadeOut').addClass('active animated fadeIn');
+    }, 5800)
+
+
+
     $scope.signupEmail = function(form) {
         $scope.emailError = false;
         $scope.errorServer = false;
@@ -102,7 +145,7 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         if (form.$valid) {       
             $scope.loading = true; 
             $.ajax({
-                url:'//neucheddar.us12.list-manage.com/subscribe/post-json?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460',
+                url:'//neucheddar.us12.list-manage.com/subscribe/post-json?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460&c=?',
                 method: 'GET',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
