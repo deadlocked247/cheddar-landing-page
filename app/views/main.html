@@ -26,7 +26,7 @@
                         </div>
                     </div> 
                 </div>
-                <div ng-click="showGuide = false" ng-if="showGuide" class="guide">
+                <div ng-click="showGuide = false" ng-show="showGuide" class="guide">
                     Live chat here!
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -102,10 +102,26 @@
             </div>
             <div style="flex:.75" class="filler"></div>
             <div class="bottom">
-                <a href="">Contact</a>
-                <a href="">Policy</a>
+                <div style="margin-bottom:10px;text-align:center;">
+                    <a class="facebook" target="_blank" href="https://www.facebook.com/neucheddar">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="twitter" target="_blank" href="https://twitter.com/neucheddar">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="insta" href="https://www.instagram.com/neucheddar/">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+                <br>
                 <a href="">Go to a different school?</a>
+                <a href="">Policy</a>
+                <a href="">Contact</a>
+                
+
+
             </div>
+            <img style="position:absolute;bottom:0;height:100px;right:50px;" src="../images/husky.png">
     </div>
 </div>
 <!-- login pane -->

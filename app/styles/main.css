@@ -496,7 +496,27 @@ width: calc(100% - 40px);
         line-height: initial;
         text-align: center;
     }
+    .hero-btn {
+        width: 200px;
+    }
+    .sub-arrow {
+        height: 30px;
+        padding-top:0px;
+        padding-left: 5px;
+    }
+    .sub-close {
+        height: 20px;
+        padding: 18px;
+        color: rgba(255,255,255,0.5);
+        padding-top: 16px;
+    }
+    .bottom {
+        margin:60px 20px;
+        margin-bottom: 140px;
+    }
 }
+
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -752,4 +772,48 @@ width: calc(100% - 40px);
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.facebook {
+    color:rgba(255,255,255,0.5) !important;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    /* height: 30px; */
+    /* width: 30px; */
+    padding: 5px 8px !important;
+    padding-left: 9px !important;
+    margin:0px 10px;
+}
+
+.twitter {
+    color:rgba(255,255,255,0.5) !important;
+border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    /* height: 30px; */
+    /* width: 30px; */
+    padding: 6px 6px !important;
+    padding-left: 8px !important;
+    margin: 0px 10px;
+}
+
+.insta {
+    color:rgba(255,255,255,0.5) !important;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    /* height: 30px; */
+    /* width: 30px; */
+    padding: 6px 8px !important;
+    padding-left: 9px !important;
+    margin:0px 10px;
+}
+
+.insta:hover, .facebook:hover, .twitter:hover {
+    border-color:white !important;
+    color:rgba(255,255,255,1) !important;
+    cursor: pointer;
 }
