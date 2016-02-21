@@ -259,12 +259,12 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
     $timeout(function () {
         if(!$scope.msgSent) {
             $scope.showGuide = true;
-            $scope.chat.data.history.push('Funny Monkey: Hey, what\'s up?\n');
         }
     }, 10000);
 
     $timeout(function () {
         if(!$scope.msgSent) {
+            $scope.chat.data.history.push('Funny Monkey has joined!\n');
             $scope.chat.data.history.push('Funny Monkey: Hey, what\'s up?\n');
         }
     }, 5000);
