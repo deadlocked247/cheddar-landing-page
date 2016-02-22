@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularAppApp', ['ngCookies', 'ngResource', 'ngSanitize', 'ngRoute']).config(function ($routeProvider) {
+angular.module('angularAppApp', ['ngCookies', 'ngResource', 'ngSanitize', 'ngRoute']).config(function ($routeProvider, $locationProvider) {
     $routeProvider
 
         // One and the only route: /
@@ -12,5 +12,5 @@ angular.module('angularAppApp', ['ngCookies', 'ngResource', 'ngSanitize', 'ngRou
         .otherwise({
             redirectTo: '/'
         });
-
+        $locationProvider.html5Mode(true);
 });
