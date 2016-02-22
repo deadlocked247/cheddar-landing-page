@@ -58,7 +58,7 @@
                     <div ng-if="msg.search(':') > 0 && msg.split(':')[0] == chat.data.username" class="msg-to-container">
 
                         <div class="msg-to">
-                            {{splt.join("")}}
+                            {{splt.join(":")}}
                         </div>
                         <div ng-init="letters = msg.split(':')[0].split(' '); count = msg.split(':')[0].split('').length" class="msg-me">
                             {{letters[0][0]}}{{letters[1][0]}}
@@ -70,7 +70,7 @@
                             {{letters[0][0]}}{{letters[1][0]}}
                         </div>
                         <div class="msg-from">
-                            {{splt.join("")}}
+                            {{splt.join(":")}}
                         </div>
                     </div>
                 </div>
