@@ -1,3 +1,51 @@
+<div ng-show="pickOther" class="pickUni animated fadeIn">
+
+    <div class="filler"></div>
+    <div class="filler" style="text-align: center;">
+        <img ng-click="pickOther=false" style="    height: 40px;position: fixed;top: 40px;right: 40px;" class="sub-close" src="../images/close.svg">
+        <div class="pick-h1">
+        Go to a different university? 
+        </div>
+        <div class="pick-h2">
+            That's cool. We just need some more info.
+        </div>
+        <div ng-hide="submitGood2" class="pick-label">
+            YOUR UNIVERSITY
+        </div>
+        <select ng-hide="submitGood2" required class="pick-select" ng-model="schoolPick" ng-init="schoolPick = 'Boston University'" ng-options="school as school for school in schools">
+        </select>
+        <div ng-hide="submitGood2" class="pick-label">
+            YOUR EMAIL
+        </div>
+        <input ng-hide="submitGood2" ng-enter="submitPick()" required type="email" placeholder="YourEmail@University.edu" ng-model="emailPick" class="pick-input">
+        </input>
+        <div ng-hide="submitGood2" ng-class="{'stop':loading2}" ng-click="submitPick()" class="pick-submit">
+            <span ng-hide="loading2">Sign up</span>
+            <div style="zoom: .25;" ng-show="loading2" class="loader2"></div>
+        </div>
+        <svg ng-if="submitGood2" style="height: 50px;padding: 20px;display: block;
+    margin: auto;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#FFFFFF;}
+            </style>
+            <path id="XMLID_6_" class="st0" d="M176.6,48.1c-6.2-6.2-16.1-6.2-22.3,0l-76.1,76.1L48.5,94.5c-6.2-6.2-16.1-6.2-22.3,0
+                c-6.2,6.2-6.2,16.1,0,22.3L67,157.7c2.3,2.3,5.2,3.8,8.1,4.3c1,0.2,2,0.3,3,0.3c4,0,8.1-1.5,11.2-4.6l87.3-87.3
+                C182.8,64.3,182.8,54.3,176.6,48.1z"/>
+            </svg>
+
+        <div style="font-size:14px" ng-show="submitGood2" class="pick-good">
+            <span style="font-size:2em;padding-bottom:20px;">All set!</span><br></br>Please check your email <strong>{{emailPick}}</strong> to confirm.
+        </div>
+        <div ng-show="errorServer2" class="pick-error">
+            There was an error with your request, please try again.
+        </div>
+        <div ng-show="errorEmail2" class="pick-error">
+            Please provide a valid email.
+        </div> 
+    </div>    
+    <div class="filler"></div>
+</div>
 <div class="cont">
     <div class="left">
         <div class="filler"></div>
@@ -114,7 +162,7 @@
                     </a>
                 </div>
                 <br>
-                <a href="">Go to a different school?</a>
+                <a href="" ng-click="pickOther = true">Go to a different school?</a>
                 <a href="mailto:cheddar@neucheddar.com?subject=Contact - NEU Cheddar">Contact</a>
                 
 

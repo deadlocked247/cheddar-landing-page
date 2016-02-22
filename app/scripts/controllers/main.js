@@ -41,6 +41,8 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         }
     }
 
+    $scope.schools = ['Boston University', 'Boston College', 'Harvard University', 'Massachusetts Institute of Technology', 'Wentworth Institute of Technology', 'Berklee College of Music', 'Other'];
+
     /////////////////////////////////////////////////
     // HELPER FUNCTION - init
     // Checks the username and create the socket object
@@ -135,7 +137,43 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         $('.show3').removeClass('fadeOut').addClass('active animated fadeIn');
     }, 5800)
 
+    $scope.loading2 = false;
+        $scope.submitGood2 = false;
+        $scope.errorEmail2 = false;
+        $scope.errorServer2 = false;
 
+    $scope.submitPick = function() {
+        $scope.loading2 = false;
+        $scope.submitGood2 = false;
+        $scope.errorEmail2 = false;
+        $scope.errorServer2 = false;
+        if ($scope.emailPick && $scope.emailPick.length > 0) {
+            $scope.loading2 = true;
+            $.ajax({
+                url:'//neucheddar.us12.list-manage.com/subscribe/post-json?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460&c=?',
+                method: 'GET',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: {
+                    "EMAIL": $scope.emailPick,
+                    "MMERGE3": $scope.schoolPick
+                },
+                success : function() {
+                    $scope.loading2 = false;
+                    $scope.submitGood2 = true;
+
+                },
+                timeout: 6000,
+                error : function() {
+                    $scope.errorServer2 = true;
+                    $scope.loading2 = false;
+                }
+            })
+        }
+        else {
+            $scope.errorEmail2 = true;   
+        }
+    }
 
     $scope.signupEmail = function(form) {
         $scope.emailError = false;
