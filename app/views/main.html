@@ -110,7 +110,14 @@
 
                 <p class="show1" style="margin:0px;padding-right:8px;" >Make new friends. </p><p class="show2" style="margin:0px;padding-right:8px"> Find a date. </p><p class="show3" style="margin:0px;">Troll. </p>
             </div>
-            <div ng-hide="loading || submitGood" class="btn-top">Your northeastern university email</div>
+            <div class="icons">
+                AVAILABLE on<br>
+                <i class="fa fa-apple">
+                </i>
+                <i class="fa fa-android">
+                </i>
+            </div>
+            <div ng-hide="loading || submitGood" class="btn-top">subscribe for updates</div>
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <svg ng-if="submitGood" style="height: 50px;padding: 20px;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -162,13 +169,15 @@
                     </a>
                 </div>
                 <br>
+                <div style="text-align:center">
+                <span style="padding:0px 15px;">Exclusively for <img style="height:25px;padding:0px 5px" src="../images/nu.png"> students</span>
                 <a href="" ng-click="pickOther = true">Go to a different school?</a>
                 <a href="mailto:cheddar@neucheddar.com?subject=Contact - NEU Cheddar">Contact</a>
-                
+                </div>
 
 
             </div>
-            <img style="position:absolute;bottom:0;height:100px;right:50px;" src="../images/husky.png">
+            <img style="z-index:0;position:absolute;bottom:0;height:100px;right:50px;" src="../images/husky.png">
     </div>
 </div>
 <!-- login pane -->

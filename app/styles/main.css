@@ -140,12 +140,25 @@ body {
     display: inline-block !important;
 }
 
+.icons {
+    color: white;
+    text-align: center;
+    font-family: 'Effra-Medium', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding-bottom:30px;
+}
+
+.icons>i {
+    padding:5px;
+    margin-top:5px;
+}
 .hero-sub {
     font-size: 2em;
     color: white;
     text-align: left;
     padding:30px 40px;
-    padding-bottom:50px;
+    padding-bottom:20px;
     flex: none;
     height: 30px;
     font-family: 'Effra-Regular', sans-serif;
@@ -158,6 +171,7 @@ body {
     padding-bottom:15px;
     color: white;
     display: block;
+    text-align: center;
     text-transform: uppercase;
 }
 
@@ -178,6 +192,7 @@ body {
 }
 .bottom {
     margin:60px;
+    z-index: 1;
     color:white;
     font-family: 'Effra-Regular', sans-serif;
 }
@@ -351,7 +366,7 @@ body {
     padding:10px;
 }
 
-.bottom>a, a:visited, a:hover {
+.bottom>div>a, a:visited, a:hover {
     color:white;
     padding:0px 20px;
 }
