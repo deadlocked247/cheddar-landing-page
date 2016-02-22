@@ -96,7 +96,14 @@
                 <img ng-click="sendButtonClicked()" src="../images/send.svg" ng-class="{'active': chat.data.messageText && chat.data.messageText.length > 0}" class="send-btn">
             </div>
         </div>
-        <div class="filler"></div>
+        <div class="filler">
+          <div ng-show="chat.data.users.length > 1" class="online-users">
+            <div></div> {{chat.data.users.length}} USERS ONLINE RIGHT NOW!
+          </div>
+          <div ng-show="chat.data.users.length == 1" class="online-users">
+            <div></div> {{chat.data.users.length}} USER ONLINE RIGHT NOW!
+          </div></div>
+
     </div>
     <div class="right">
         <div class="filler"></div>
@@ -177,9 +184,12 @@
 
 
             </div>
+
             <img style="z-index:0;position:absolute;bottom:0;height:100px;right:50px;" src="../images/husky.png">
     </div>
 </div>
+
+
 <!-- login pane -->
 <div style="display:none;" >
     <form name="loginForm" ng-init="init()">

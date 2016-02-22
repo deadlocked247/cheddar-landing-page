@@ -72,7 +72,7 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
     // HELPER FUNCTION - send
     // Sends a message to the server
     $scope.send = function(type, data) {
-        
+
         $scope.chat.socket.send(JSON.stringify({type: type, data: data}));
     };
 
@@ -87,7 +87,7 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         });
         $(".chat").animate({ scrollTop: $(".chat")[0].scrollHeight}, 1000);
 
-        
+
     };
 
     $scope.clearBox = function(form) {
@@ -105,10 +105,10 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         $timeout(function() {
             $('.show1').removeClass('active');
         }, 500)
-        
+
     }, 1400)
 
-    $timeout(function() { 
+    $timeout(function() {
         $('.show2').addClass('active animated fadeIn');
     }, 2000)
 
@@ -171,7 +171,7 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
             })
         }
         else {
-            $scope.errorEmail2 = true;   
+            $scope.errorEmail2 = true;
         }
     }
 
@@ -180,13 +180,14 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         $scope.errorServer = false;
         $scope.submitGood = false;
 
-        if (form.$valid) {       
-            $scope.loading = true; 
+        if (form.$valid) {
+            $scope.loading = true;
             $.ajax({
                 url:'//neucheddar.us12.list-manage.com/subscribe/post-json?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460&c=?',
                 method: 'GET',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
+                timeout: 6000,
                 data: {
                     "EMAIL": $scope.emailInput
                 },
@@ -229,7 +230,7 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         $scope.$apply();
 
     };
- 
+
     /////////////////////////////////////////////////
     // SOCKJS EVENT: ON.MESSAGE
     // There is a message coming from the server, handle carefully
@@ -280,7 +281,7 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
 
             // clear message box in the UI
             $scope.chat.data.messageText = '';
-            
+
         }
 
     };
