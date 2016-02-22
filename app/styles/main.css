@@ -575,8 +575,8 @@ width: calc(100% - 40px);
     .left:before {
         width: 500%;
         height: 400%;
-        top: 100%;
-        left: -100%;
+        top: 0%;
+        left: -200%;
     }
     .left {
         flex:none;
