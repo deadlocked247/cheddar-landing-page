@@ -4,7 +4,7 @@
     <div class="filler" style="text-align: center;">
         <img ng-click="pickOther=false" style="    height: 40px;position: fixed;top: 40px;right: 40px;" class="sub-close" src="../images/close.svg">
         <div class="pick-h1">
-        Go to a different university? 
+        Go to a different university?
         </div>
         <div class="pick-h2">
             That's cool. We just need some more info.
@@ -42,8 +42,8 @@
         </div>
         <div ng-show="errorEmail2" class="pick-error">
             Please provide a valid email.
-        </div> 
-    </div>    
+        </div>
+    </div>
     <div class="filler"></div>
 </div>
 <div class="cont">
@@ -54,25 +54,25 @@
             <div class="chat">
                 <div id="chat-history" ng-init="splt = msg.split(':').splice(1)" ng-repeat="msg in chat.data.history track by $index" class="from">
                     <div ng-if="msg.search(':') == -1" class="msg-joined">{{msg}}</div>
-                    
+
                     <div ng-if="msg.search(':') > 0 && msg.split(':')[0] == chat.data.username" class="msg-to-container">
-                        
+
                         <div class="msg-to">
                             {{splt.join("")}}
                         </div>
                         <div ng-init="letters = msg.split(':')[0].split(' '); count = msg.split(':')[0].split('').length" class="msg-me">
-                            {{letters[0][0]}}{{letters[1][0]}} 
+                            {{letters[0][0]}}{{letters[1][0]}}
                         </div>
-                    </div> 
-                    
+                    </div>
+
                      <div ng-if="msg.search(':') > 0 && msg.split(':')[0] != chat.data.username" class="msg-from-container">
                         <div ng-init="letters = msg.split(':')[0].split(' '); count = msg.split(':')[0].split('').length" class="msg-them" ng-class="{'red': count < 8, 'yellow': count >= 8 && count < 18, 'orange': count>= 18}">
-                            {{letters[0][0]}}{{letters[1][0]}} 
+                            {{letters[0][0]}}{{letters[1][0]}}
                         </div>
                         <div class="msg-from">
                             {{splt.join("")}}
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div ng-click="showGuide = false" ng-show="showGuide" class="guide">
                     Live chat here!
@@ -111,7 +111,7 @@
                 <p class="show1" style="margin:0px;padding-right:8px;" >Make new friends. </p><p class="show2" style="margin:0px;padding-right:8px"> Find a date. </p><p class="show3" style="margin:0px;">Troll. </p>
             </div>
             <div class="icons">
-                AVAILABLE on<br>
+                coming soon to<br>
                 <i class="fa fa-apple">
                 </i>
                 <i class="fa fa-android">
@@ -140,7 +140,7 @@
 
                         <img ng-click="signupEmail(uniForm)" class="sub-arrow" src="../images/arrow.svg">
                     </form>
-                </div> 
+                </div>
                 <img ng-show="!(uniForm.$error.required && !uniForm.$error.email) && !emailInput" ng-click="clearBox(uniForm)" class="sub-close" src="../images/close.svg">
             </div>
 
