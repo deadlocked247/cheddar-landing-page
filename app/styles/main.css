@@ -568,6 +568,13 @@ width: calc(100% - 40px);
 
 
 @media(max-width: 960px) {
+  .bottom>.links>a {
+    display: block;
+    margin:10px auto;
+  }
+  .links {
+    padding-top:15px;
+  }
     .cont {
         flex-direction:column;
         position:relative;
@@ -724,6 +731,10 @@ width: calc(100% - 40px);
 }
 
 @media(max-height:600px) {
+
+  .links {
+    padding-top:20px
+  }
     .cont {
         flex-direction:column;
         position:relative;
