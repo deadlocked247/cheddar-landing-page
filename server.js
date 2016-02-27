@@ -1,14 +1,20 @@
 // import required libs
 express = require('express');
 http = require('http');
+mcapi = require('./node_modules/mailchimp-api/mailchimp');
+var bodyParser = require("body-parser");
+
 
 // functions
 var socket = require('./func/socket.js');
+var mc = new mcapi.Mailchimp('fe7001072a5b49f2c6a0ba004eac30c8-us12');
 var route = require('./func/route.js');
 var environment = require('./func/environment.js');
 
 // create express app
 app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // set all environment variables
 environment.set();
@@ -20,6 +26,28 @@ route.init();
 var server = http.createServer(app);
 
 app.use('/', express.static(__dirname + '/app'));
+
+app.post('/lists/subscribe', function(req, res){
+  mc.lists.subscribe(
+    {
+      id: '66f2229460',
+      email: {
+        email:req.query.email
+      },
+      double_optin: false
+    },
+    function(data) {
+      res.send(200);
+    },
+    function(error) {
+      if (error.error) {
+        res.send(500);
+      } else {
+        res.send(500);
+      }
+
+    });
+  });
 
 
 // No longer using appfog

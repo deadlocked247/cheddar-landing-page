@@ -182,25 +182,19 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
 
         if (form.$valid) {
             $scope.loading = true;
-            $.ajax({
-                url:'//neucheddar.us12.list-manage.com/subscribe/post-json?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460&c=?',
-                method: 'GET',
-                contentType: "application/json; charset=utf-8",
-                dataType: 'json',
-                timeout: 6000,
-                data: {
-                    "EMAIL": $scope.emailInput
-                },
-                success : function() {
-                    $scope.loading = false;
-                    $scope.submitGood = true;
-
-                },
-                error : function() {
-                    $scope.errorServer = true;
-                    $scope.loading = false;
-                }
+            $http({
+              method:"POST",
+              url:"/lists/subscribe?email=" + $scope.emailInput
             })
+            .then(function (payload) {
+              $scope.loading = false;
+              $scope.submitGood = true;
+            })
+            .catch(function (payload) {
+              $scope.errorServer = true;
+              $scope.loading = false;
+            });
+
         }
         else {
             $scope.emailError = true;
