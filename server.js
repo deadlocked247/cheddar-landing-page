@@ -40,8 +40,9 @@ app.post('/lists/subscribe', function(req, res){
       res.send(200);
     },
     function(error) {
-      if (error.error) {
-        res.send(500);
+      console.log(error);
+      if (error.code == 214) {
+        res.send(200);
       } else {
         res.send(500);
       }
