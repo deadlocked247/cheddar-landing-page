@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="send-msg">
-                <input ng-enter="sendButtonClicked()" class="message" ng-model="chat.data.messageText" name="messageText" type="text" placeholder="Say cheese...">
+                <input ng-disabled="!chat.status.started && chat.status.error" ng-enter="sendButtonClicked()" class="message" ng-model="chat.data.messageText" name="messageText" type="text" placeholder="Say cheese...">
                 <img ng-click="sendButtonClicked()" src="../images/send.svg" ng-class="{'active': chat.data.messageText && chat.data.messageText.length > 0}" class="send-btn">
             </div>
         </div>

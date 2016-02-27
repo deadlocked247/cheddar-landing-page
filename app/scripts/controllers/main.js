@@ -149,26 +149,19 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
         $scope.errorServer2 = false;
         if ($scope.emailPick && $scope.emailPick.length > 0) {
             $scope.loading2 = true;
-            $.ajax({
-                url:'//neucheddar.us12.list-manage.com/subscribe/post-json?u=1734cfcb2f07c30fb8ccc76ad&amp;id=66f2229460&c=?',
-                method: 'GET',
-                contentType: "application/json; charset=utf-8",
-                dataType: 'json',
-                data: {
-                    "EMAIL": $scope.emailPick,
-                    "MMERGE3": $scope.schoolPick
-                },
-                success : function() {
-                    $scope.loading2 = false;
-                    $scope.submitGood2 = true;
-
-                },
-                timeout: 6000,
-                error : function() {
-                    $scope.errorServer2 = true;
-                    $scope.loading2 = false;
-                }
+            $http({
+              method:"POST",
+              url:"/lists/subscribe?email=" + $scope.emailPick + "&school=" + $scope.schoolPick
             })
+            .then(function (payload) {
+              $scope.loading2 = false;
+              $scope.submitGood2 = true;
+            })
+            .catch(function (payload) {
+              $scope.errorServer2 = true;
+              $scope.loading2 = false;
+            });
+
         }
         else {
             $scope.errorEmail2 = true;
@@ -247,18 +240,32 @@ angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route,
 
     };
 
+    $scope.connectAttempt = false;
     /////////////////////////////////////////////////
     // SOCKJS EVENT: ON.ERROR
     // IF there is an error, hide chat console, show the error message to the user
     $scope.onError = function(e) {
 
-        // stop chat, show error message to the user
-        $scope.chat.status.error = e.reason;
-        $scope.chat.status.started = false;
+
 
         // print error
         console.log('onerror: ', e);
-        $scope.$apply();
+
+
+        if(!$scope.connectAttempt) {
+          $timeout(function () {
+            $scope.init();
+            console.log("Attempting to reconnect...");
+            $scope.connectAttempt = true;
+          }, 4000);
+
+        }
+        else {
+          // stop chat, show error message to the user
+          $scope.chat.status.error = e.reason;
+          $scope.chat.status.started = false;
+          $scope.$apply();
+        }
 
     };
 

@@ -729,9 +729,14 @@ width: calc(100% - 40px);
         border-bottom: 0;
     }
 }
-
+.uni-input:disabled {
+  background: red !important;
+}
 @media(max-height:600px) {
 
+  .online-users {
+    display: none;
+  }
   .links {
     padding-top:20px
   }

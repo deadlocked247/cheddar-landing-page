@@ -28,11 +28,15 @@ var server = http.createServer(app);
 app.use('/', express.static(__dirname + '/app'));
 
 app.post('/lists/subscribe', function(req, res){
+
   mc.lists.subscribe(
     {
       id: '66f2229460',
       email: {
         email:req.query.email
+      },
+      merge_vars: {
+        "MMERGE3": req.query.school
       },
       double_optin: false
     },
