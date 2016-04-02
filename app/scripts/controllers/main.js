@@ -2,23 +2,20 @@
 
 angular.module('angularAppApp').controller('MainCtrl', function ($scope, $route, $timeout, chatService, $http) {
 
-    // TODO:
-    // Create a class: request
-    // Use it in send(type, data) function
-
-    // TODO:
-    // Create a class: response
-    // Use it in onMessage(message) function
-
-    // REQUEST TYPE
-    // This needs to defined in the server as well
-    // All requests and responses should carry request type information
     var REQUEST_TYPE = {
         NEW_MESSAGE: 1,
         USER_JOINED: 2,
         USER_DISCONNECTED: 3,
         USER_LIST : 4
     }
+
+
+    $scope.downloadPress = function() {
+        chatService.press()
+        .then(function(payload) {
+            console.log("Asd")
+        });
+    };
 
     $scope.msgSent = false;
 

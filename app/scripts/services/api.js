@@ -9,6 +9,18 @@ angular.module('angularAppApp').factory('chatService', function($http) {
         // RETURNS SockJS object
         socket : function(){
             return new SockJS(server, null, {debug: true});
+        },
+
+        press : function() {
+            return $http({
+                method: "POST",
+                headers: {
+                      accept: 'application/zip' //or whatever you need
+                  },
+                url: "/downloadPress",
+                responseType: "arraybuffer",
+                cache: false,
+            });
         }
 
     }
