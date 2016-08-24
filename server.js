@@ -27,6 +27,10 @@ var server = http.createServer(app);
 
 app.use('/', express.static(__dirname + '/app'));
 
+app.get('/tos', function(req, res) {
+  res.sendfile(__dirname + '/app/tos.html');
+});
+
 app.post('/lists/subscribe', function(req, res){
 
   mc.lists.subscribe(
