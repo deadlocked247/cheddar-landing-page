@@ -11,6 +11,10 @@ body {
     display: none;
 }
 
+.nohover:hover {
+  padding: 0;
+  text-decoration: none;
+}
 .cont {
     display: flex;
     min-height: 100%;
