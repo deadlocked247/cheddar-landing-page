@@ -213,7 +213,7 @@ body {
 .hero-sub {
     font-size: 2em;
     color: white;
-    text-align: left;
+    text-align: center;
     padding:30px 40px;
     padding-bottom:20px;
     flex: none;
@@ -248,7 +248,7 @@ body {
     cursor: pointer;
 }
 .bottom {
-    margin:60px;
+    margin: 20px;
     z-index: 1;
     color:white;
     font-family: 'Effra-Regular', sans-serif;
@@ -602,6 +602,7 @@ width: calc(100% - 40px);
 .right {
     background: #f26667;
     flex:2;
+    justify-content: center;
     display: flex;
     flex-direction:column;
     align-items:center;
@@ -612,6 +613,12 @@ width: calc(100% - 40px);
   .bottom>.links>a {
     display: block;
     margin:10px auto;
+  }
+  .icons {
+    padding-top: 30px;
+  }
+  .footer {
+    margin-top: 10px;
   }
   .links {
     padding-top:15px;
@@ -669,8 +676,10 @@ width: calc(100% - 40px);
     .hero-sub {
         font-size: 2em;
         color: white;
+        display: none;
+        width: 100%;
         text-align: left;
-        padding: 15px 25px;
+        padding: 15px 0px;
         padding-bottom: 50px;
         flex: none;
         font-family: 'Effra-Regular', sans-serif;
